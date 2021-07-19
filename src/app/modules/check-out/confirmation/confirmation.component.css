@@ -1,0 +1,17 @@
+.confirmation .material-icons,
+.confirmation h3 {
+  font-size: 32px;
+}
+
+.confirmation .material-icons {
+  color: green;
+}
+
+.item-card {
+  border-radius: 20px;
+  box-shadow: 1px -2px 10px rgba(223, 173, 173, 0.43);
+}
+
+.item-card img {
+  margin: 10px;
+}

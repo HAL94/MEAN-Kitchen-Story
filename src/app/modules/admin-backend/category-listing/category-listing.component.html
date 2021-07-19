@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row mt-50 mb-30">
+        <div class="col-12 title">
+            <h3 class="text-center">Categories</h3>
+        </div>
+    </div>
+    <div class="row">
+        <app-modal *ngIf="showForm" [showCloseBtn]="false">
+            <app-category-form [editCategory]="selectedCategory"></app-category-form>
+        </app-modal>
+        <div class="col-12 mb-30">
+            <button class="btn theme-bg" (click)="showCategoryForm()">
+                <i class="material-icons">add_circle</i>
+            </button>
+        </div>
+
+        <div class="col-12 col-md-12">
+            
+            <ul class="list-group list-group-flush" *ngIf="(cats$ | async)">
+                <li class="list-group-item" *ngFor="let category of (cats$ | async)">
+                    {{category.name}}
+                </li>               
+            </ul>
+            <app-loading-spinner *ngIf="!(cats$ | async)"></app-loading-spinner>
+            <p class="text-center" *ngIf="(cats$ | async) && (cats$ | async).length === 0">No categories.. Start adding something</p>
+        </div>
+    </div>
+</div>

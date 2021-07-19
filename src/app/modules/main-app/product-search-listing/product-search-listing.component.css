@@ -1,0 +1,98 @@
+.list {
+  max-width: 550px;
+  margin: auto;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.filter-block {
+  color: #545454;
+  position: relative;
+  padding: 20px;
+  font-size: 14px;
+  border-bottom: 1px solid #e6e6e6;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-top: 3px solid #e08f4e;
+}
+
+.list-group-item {
+  cursor: pointer;
+}
+
+.btn .material-icons-outlined {
+  float: left;
+}
+
+.container-fluid {
+  max-width: 1490px;
+}
+
+pagination-controls {
+  text-align: center;
+}
+
+.card-body {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.filter-size {
+  display: flex;
+  align-items: center;
+}
+
+.filter-size label {
+  margin: 0;
+  min-width: 80px;
+}
+
+.card-control {
+  display: flex;
+}
+.btn {
+  position: relative;
+  margin-right: 10px;
+}
+
+.btn-loading .btn-text,
+.btn-loading .material-icons-outlined {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.btn-loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border: 4px solid transparent;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+  from {
+    transform: rotate(0turn);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
+@media screen and (max-width: 992px) {
+  .card-img-top {
+    width: 40%;
+    display: block;
+    margin: auto;
+  }
+}

@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row mt-50 mb-30">
+        <div class="col-12 title">
+            <h3 class="text-center">Customers</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-12">            
+            <ul class="list-group list-group-flush" *ngIf="(customers$ | async)">
+                <li class="list-group-item" *ngFor="let customer of (customers$ | async)">
+                    {{customer.fullName}} - {{customer.email}}
+                </li>               
+            </ul>
+            <app-loading-spinner *ngIf="!(customers$ | async)"></app-loading-spinner>
+            <p class="text-center" *ngIf="(customers$ | async) && (customers$ | async).length === 0">No customers found.. Maybe you should start advertising!</p>
+        </div>
+    </div>
+</div>

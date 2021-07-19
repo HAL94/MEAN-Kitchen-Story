@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "60ec4da567d1a811b8482879"
+  },
+  "name": "Fruits & Vegetables"
+},{
+  "_id": {
+    "$oid": "60ec4daa67d1a811b848287d"
+  },
+  "name": "Drinks"
+},{
+  "_id": {
+    "$oid": "60eed6dd3923ee67e49d1315"
+  },
+  "name": "Frozen Food"
+}]

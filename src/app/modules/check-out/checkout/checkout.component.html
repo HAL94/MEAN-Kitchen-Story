@@ -1,0 +1,82 @@
+<div class="container">
+    <div class="row mt-50">
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb" class="col-12">
+            <ol class="breadcrumb justify-content-center">
+              <li class="breadcrumb-item"><a routerLink="/home">Home</a></li>
+              <li class="breadcrumb-item"><a routerLink="/cart">Cart</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row mt-50">
+        <div class="col-12 checkout-summary-title">
+            <div class="card checkout-card p-20">
+                <div class="card-title has-bottom-border pb-8">
+                    <h3>Order Summary</h3>
+                </div>
+                <div class="row mt-10 mrl-15 justify-content-center">
+                    <div class="col-12 col-lg-6 col-xl-4 d-flex item-card mrl-15 mt-30 cursor-pointer" *ngFor="let item of (cart$ | async).items">
+                        <img alt="Sample" class="img-fluid w-100" src="{{item.product.imageUrl}}">
+                        <div class="flex-order-container p-20 ml-30 text-center">
+                            <h5 class="product-title">{{item.product.name}}</h5>
+                            <p class="mb-0 product-price">
+                                <span><strong>{{item.product.price | currency: 'SAR '}}</strong></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>           
+        </div>
+    </div>
+    <div class="row mt-50">
+        <app-modal [backgroundStyle]="'transparent'" [showCloseBtn]="false" *ngIf="isLoading">
+            <app-loading-spinner></app-loading-spinner>
+        </app-modal>
+        <div class="col-12 card checkout-card p-20">
+            <div class="card-title has-bottom-border pb-8">
+                <h3>Payment Information</h3>
+            </div>
+            <div class="row mt-10 mrl-15">
+                <form class="col-12 col-lg-8 offset-lg-2 p-50 payment-card" #paymentForm="ngForm" (ngSubmit)="onSubmitOrder()">
+                    <div class="form-group">
+                        <label for="cardHolderName">Card Holder Name</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><span class="material-icons">face</span></span>
+                            <input type="text" name="cardHolderName" class="form-control" required ngModel>
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-30">
+                        <label>Card Details</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><span class="material-icons">credit_card</span></span>
+                            <input type="text" class="form-control f-grow-3" placeholder="Card Number" name="cardNumber" required ngModel>
+                            <input type="text" class="form-control" placeholder="MM / YY" name="cardExpiration" required ngModel>
+                            <input type="text" class="form-control" placeholder="CCV" name="ccv" required ngModel>
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-30">
+                        <label for="address">Address Information</label>
+                        <div class="input-group">
+                            <span class="input-group-text"><span class="material-icons">home</span></span>
+                            <input type="text" name="address" class="form-control" placeholder="Address" required ngModel>
+                        </div>
+                        <div class="input-group mt-10">
+                            <input type="text" name="locale" class="form-control" placeholder="District or Region" ngModel>                        
+                            <input type="text" name="city" class="form-control" placeholder="City" ngModel>
+                            <input type="text" name="postalCode" class="form-control" placeholder="Postal Code" required ngModel>
+                            <input type="text" name="country" class="form-control" placeholder="Country" required ngModel>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-custom-2 d-block m-20-auto" [disabled]="!paymentForm.valid">Place Order</button>
+                </form>
+               
+            </div>
+        </div>
+    </div>
+</div>

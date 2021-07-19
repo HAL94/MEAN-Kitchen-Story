@@ -1,0 +1,9 @@
+<div class="backdrop" (click)="onCloseModal()"></div>
+<div class="alert-box" [ngClass] = "{'alert-bg-trans': backgroundStyle === 'transparent' }">    
+    <ng-content>
+
+    </ng-content>
+    <div class="alert-box-action" *ngIf="showCloseBtn">
+        <button class="btn btn-primary" (click)="onCloseModal()">Close</button>
+    </div>
+</div>

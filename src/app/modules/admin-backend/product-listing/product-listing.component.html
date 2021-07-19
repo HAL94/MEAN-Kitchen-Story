@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row mt-50 mb-30">
+        <div class="col-12 title">
+            <h3 class="text-center">Product Listing</h3>
+        </div>
+    </div>
+    <div class="row">
+        <app-modal *ngIf="showForm" [showCloseBtn]="false">
+            <app-product-form [editProduct]="selectedProduct" [editMode]="editMode"></app-product-form>
+        </app-modal>
+        <div class="col-12 col-md-12">
+            <div class="card-table">
+                <div class="card-header theme-bg">
+                    <h4 class="card-title">Products Table</h4>
+                    <p class="card-category">Add your products</p>
+                    <i class="material-icons icon-right" (click)="showProductForm()">add_circle</i>
+                </div>
+                <app-loading-spinner *ngIf="!(prods$ | async)"></app-loading-spinner>
+                <div class="card-body" *ngIf="(prods$ | async)">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead class="text-primary">
+                                <th>Product Image</th>
+                                <th>Product Name</th>
+                                <th>Product Price</th>
+                                <th>Category</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let product of (prods$ | async)">                                    
+                                    <td><img src="{{product.imageUrl}}" alt="" width=50 height=50></td>
+                                    <td>{{product.name}}</td>
+                                    <td>{{product.price | currency: 'SAR '}}</td>
+                                    <td>{{product.category.name}}</td>
+                                    <td><i class="material-icons" (click)="showProductForm(product)">edit</i></td>
+                                    <td><i class="material-icons" (click)="deleteProduct(product)">clear</i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center" *ngIf="(prods$ | async) && (prods$ | async).length === 0">You can start adding your products here</p>
+        </div>
+    </div>
+</div>

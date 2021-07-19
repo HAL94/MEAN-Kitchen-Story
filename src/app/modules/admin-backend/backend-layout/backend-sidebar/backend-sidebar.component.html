@@ -1,0 +1,50 @@
+<div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-light sidebar" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      <!-- <span class="fs-4 sidebar-title">Sidebar</span> -->
+      <div class="sidebar-logo">
+        <img src="../../../../../assets/logo-3.png" alt="" width="140" class="d-block m-auto">
+      </div>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active" routerLink="product-listing">
+          <span class="material-icons">inventory</span>          
+          <span class="nav-link-title">Products</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" routerLinkActive="active" routerLink="category-listing">
+          <span class="material-icons">category</span>
+          <span class="nav-link-title">Categories</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link">
+          <span class="material-icons">list_alt</span>
+          <span class="nav-link-title">Orders</span>
+        </a>
+      </li>
+      <li>
+        <a class="nav-link" routerLinkActive="active" routerLink="customer-listing">
+          <span class="material-icons">groups</span>
+          <span class="nav-link-title">Customers</span>
+        </a>
+      </li>
+    </ul>
+    <hr>
+
+    <div class="dropdown cursor-pointer" (click)="myDrop.toggle()">                
+        <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">            
+            <a class="d-flex align-items-center text-decoration-none dropdown-toggle" id="dropdownUser" ngbDropdownAnchor>
+                <img src="https://github.com/mdo.png" alt="" class="rounded-circle me-2" width="32" height="32">
+                <strong class="user-name">{{userName}}</strong>
+              </a>
+            <div ngbDropdownMenu aria-labelledby="dropdownUser" class="dropdown-menu dropdown-menu-dark text-small shadow">
+              <a ngbDropdownItem routerLink="change-password">Change Password</a>                     
+              <button ngbDropdownItem (click)="signOut()">Sign Out</button>                     
+            </div>
+        </div>
+    </div>
+  </div>

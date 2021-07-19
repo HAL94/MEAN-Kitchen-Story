@@ -1,0 +1,200 @@
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap");
+@import "material-icons/iconfont/material-icons.css";
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.m-20-auto {
+  margin: 20px auto;
+}
+
+.mr-30 {
+  margin-right: 30px;
+}
+
+.mrl-15 {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+.mtb-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.mtb-40-auto {
+  margin: 40px auto;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+.mt-30 {
+  margin-top: 30px;
+}
+.mt-50 {
+  margin-top: 50px;
+}
+.mb-10 {
+  margin-bottom: 10px;
+}
+.mb-30 {
+  margin-bottom: 30px;
+}
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.mb-100 {
+  margin-bottom: 100px;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.ml-30 {
+  margin-left: 30px;
+}
+
+.p-0 {
+  padding: 0px;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.p-50 {
+  padding: 50px;
+}
+.pr-55 {
+  padding-right: 55px;
+}
+
+.pl-55 {
+  padding-left: 55px;
+}
+
+.pb-8 {
+  padding-bottom: 8px;
+}
+
+.pt-54 {
+  padding-top: 54px;
+}
+
+.pt-55 {
+  padding-top: 55px;
+}
+
+.pt-65 {
+  padding-top: 65px;
+}
+
+.pt-155 {
+  padding-top: 155px;
+}
+
+.pb-17 {
+  padding-bottom: 17px;
+}
+
+.pb-20 {
+  padding-bottom: 20px;
+}
+
+.pb-31 {
+  padding-bottom: 31px;
+}
+.pb-49 {
+  padding-bottom: 49px;
+}
+
+.pb-55 {
+  padding-bottom: 55px;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.bg-primary {
+  background-color: #e99f4a;
+}
+
+.btn-custom-1 {
+  background: #fff;
+  color: #e99f4a;
+}
+
+.btn-custom-2 {
+  background: #e99f4a;
+  color: #fff;
+}
+
+.btn-custom-3 {
+  background: #545454;
+  color: #e99f4a;
+  font-weight: 700;
+}
+
+.btn-custom-1,
+.btn-custom-2 {
+  font-weight: 700;
+  border-radius: 24px;
+  padding: 10px;
+  text-align: center;
+  transition: all 0.2s ease-in;
+}
+
+.btn-custom-1:hover,
+.btn-custom-2:hover {
+  box-shadow: 0 0 0 4px #f7d5b9;
+  color: #f7d5b9;
+}
+
+.card {
+  border: 1px solid rgb(208, 183, 163);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.input-group-text {
+  color: #e08f4e;
+  background-color: #545454;
+}
+
+.has-bottom-border {
+  border-bottom: 1px solid #ddd;
+}

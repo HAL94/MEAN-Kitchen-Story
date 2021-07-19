@@ -1,0 +1,12 @@
+.list-group-flush > .list-group-item:last-child {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-width: 0 0 1px;
+}
+.list-group-item {
+  cursor: pointer;
+  transition: background-color 0.12s ease-in;
+}
+
+.list-group-item:hover {
+  background-color: #dedede;
+}

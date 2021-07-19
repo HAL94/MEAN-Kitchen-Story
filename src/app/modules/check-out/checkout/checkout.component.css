@@ -1,0 +1,32 @@
+.breadcrumb {
+  background-color: transparent;
+}
+
+.fixed-card {
+  width: 280px;
+}
+
+.checkout-card {
+  border: none;
+}
+
+.payment-card,
+.item-card {
+  border-radius: 20px;
+  box-shadow: 1px -2px 10px rgba(223, 173, 173, 0.43);
+}
+
+.item-card img {
+  margin: 10px;
+}
+
+.flex-order-container {
+  min-width: 200px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+.f-grow-3 {
+  flex-grow: 3;
+}

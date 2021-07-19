@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center confirmation">
+            <span class="material-icons d-block m-auto">check_circle</span>
+            <h3>Your order is placed!</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="row mt-10 mrl-15 justify-content-center">
+            <div class="col-12 col-lg-6 col-xl-4 d-flex item-card mrl-15 mt-30 cursor-pointer" *ngFor="let item of cart.items">
+                <img alt="Sample" class="img-fluid w-100" src="{{item.product.imageUrl}}">
+                <div class="flex-order-container p-20 ml-30 text-center">
+                    <h5 class="product-title">{{item.product.name}}</h5>
+                    <p class="mb-0 product-price">
+                        <span><strong>{{item.product.price | currency: 'SAR '}}</strong></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

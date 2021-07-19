@@ -1,0 +1,175 @@
+header {
+  padding: 0px;
+}
+
+.header-form {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid #e99f4a;
+  flex-grow: 0.6;
+}
+
+.header-form .form-control {
+  height: auto;
+  border: none;
+  box-shadow: none;
+  border-right: 1px solid #dedede;
+  border-radius: 0;
+}
+
+.header-form select {
+  border: none;
+  padding: 8px;
+}
+
+.btn .material-icons-outlined {
+  vertical-align: bottom;
+}
+
+.container {
+  justify-content: flex-start;
+  flex-flow: row nowrap;
+}
+
+.site-logo {
+  position: relative;
+  flex-grow: 0.1;
+  cursor: pointer;
+}
+
+.site-logo img {
+  width: 140px;
+}
+
+.header-title {
+  position: absolute;
+  bottom: -30px;
+  left: 4px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  width: 138px;
+}
+.navbar {
+  border-bottom: 1px solid #d0b7a3;
+}
+.site-right {
+  display: flex;
+  justify-content: space-evenly;
+  flex-grow: 0.3;
+  cursor: pointer;
+}
+
+.item .material-icons-outlined {
+  font-size: 37px;
+  color: #e08f4e;
+}
+
+.item.account {
+  margin-left: 75px;
+}
+
+.item.cart {
+  position: relative;
+  display: flex;
+}
+.item .cart-items-count {
+  font-size: 12px;
+  padding: 2px 5px;
+  position: absolute;
+  text-align: center;
+  top: -3px;
+  left: 30px;
+  color: #252525;
+  background: #f7d5b9;
+  border-radius: 50%;
+  line-height: 1.2;
+  z-index: 2;
+}
+
+.item-text {
+  float: right;
+  margin-top: 10px;
+}
+
+.btn.btn-header-search {
+  border-radius: none;
+  border: none;
+  background: #e99f4a;
+  border-radius: 0px;
+  color: #fff;
+}
+
+.custom-navbar {
+  justify-content: center;
+  padding-bottom: 0px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #d0b7a3;
+}
+
+.custom-navbar-2 {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: right;
+  padding: 0;
+  background: #f7d5b9;
+}
+
+.custom-navbar .nav-item,
+.custom-navbar-2 .nav-item {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.custom-navbar .navbar-nav,
+.custom-navbar-2 .navbar-nav {
+  flex-direction: row;
+}
+
+.custom-navbar .nav-item .nav-link {
+  color: #545454;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.custom-navbar-2 .nav-item .nav-link {
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  background-color: #e08f4e;
+}
+
+.account-icon {
+  margin-left: 6px;
+}
+
+.cart-text {
+  float: right;
+  margin: 10px;
+  font-weight: 500;
+}
+
+#dropdownAdmin::after {
+  margin-top: 10px;
+}
+
+#dropdownUser::after {
+  margin-top: 10px;
+}
+
+.dropdown-item .material-icons {
+  font-size: 20px;
+  color: #ecbe98;
+  float: left;
+  margin-top: 2px;
+}
+
+.dropdown-item .dropdown-text {
+  margin-left: 10px;
+}

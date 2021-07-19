@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row mt-50">
+        <div class="col-12 form-title">
+            <h3 class="text-center">Add Category</h3>
+        </div>
+    </div>
+    <div class="row">
+        <form class="col-12 col-lg-6 offset-lg-3" #catForm="ngForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="name">Category Name</label>
+                <input type="text" name="name" ngModel [(ngModel)]="editCategory.name" required class="form-control">
+            </div>            
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit" [disabled]="!catForm.valid">Submit</button>
+                <button class="btn btn-link" type="button" (click)="closeModal()">Close</button>
+            </div>
+        </form>
+    </div>
+</div>

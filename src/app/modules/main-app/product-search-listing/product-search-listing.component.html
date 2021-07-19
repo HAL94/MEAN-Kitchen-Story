@@ -1,0 +1,74 @@
+<app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+
+<div class="container" *ngIf="!isLoading && (!prods || count === 0)">
+    <div class="row mt-50 mb-30">
+        <div class="col-12 title">
+            <h3 class="text-center">No Products Yet.. come back again</h3>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="prods && count">    
+    <div class="container">
+        <div class="row mt-50 mb-30">
+            <div class="col-12 title">
+                <h3 class="text-center">Search Results: {{count}} products</h3>
+            </div>
+        </div>        
+    </div>
+    
+    <div class="search-results container-fluid mb-30">
+        <div class="row mb-10">
+            <div class="col-lg-2 ml-auto">
+                <form class="filter-size">
+                    <label for="itemsPerPage">Page Size</label>
+                    <select name="itemsPerPage" [(ngModel)]="pageSize" class="form-control" (change)="refreshItemResults()">
+                        <option value="3">3 Items</option>
+                        <option value="4">4 Items</option>
+                        <option value="6">6 Items</option>
+                        <option value="9">9 Items</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+        <div class="row">            
+            <div class="col-12 col-lg-3 side-bar-filter mb-30">
+                <div class="filter-block">
+                    Shop By
+                </div>
+                <div class="block-content">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item cursor-pointer" *ngFor="let category of (cats$ | async)">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="{{category.id}}" (change)="updateCheckedOptions(category, $event)">
+                                <label class="form-check-label cursor-pointer" for="{{category.id}}">
+                                    {{category.name}}
+                                </label>
+                            </div>                               
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-lg-9">                
+                <div class="row">
+                    <div class="col-lg-3" *ngFor="let prod of prods | paginate: { itemsPerPage: pageSize, currentPage: page, totalItems: count }">
+                        <div class="card mb-30">                            
+                            <img class="card-img-top" src="{{prod.imageUrl}}" alt="The great ancestor delight">
+                            <div class="card-body">
+                                <h5 class="card-title">{{prod.name}}</h5>
+                                <p class="card-text">{{ prod.price | currency: 'SAR '}}</p>
+                                <form class="card-control" (ngSubmit)="onAddToCart(cartForm, prod, addProd)" #cartForm="ngForm">
+                                    <button class="btn btn-dark" #addProd type="submit" [disabled]="cartForm.invalid">
+                                        <span class="material-icons-outlined">add</span>
+                                    </button>
+                                    <input type="number" name="qt" ngModel min="1" class="form-control" required>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<pagination-controls *ngIf="prods && count" (pageChange)="onPageChange($event)"></pagination-controls>
