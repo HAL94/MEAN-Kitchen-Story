@@ -29,7 +29,13 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.cart$ = this.cartService.cart$;
-    this.cartService.cart$.subscribe((cart) => this.cart = cart);
+    this.cartService.cart$.subscribe((cart) => {
+      if (!cart.id) {
+        this.router.navigate(['/']);
+        return;
+      }
+      this.cart = cart;
+    });
   }
 
   onSubmitOrder() {
