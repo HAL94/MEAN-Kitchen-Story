@@ -44,7 +44,7 @@ app.use("/api", orderRoutes);
 app.use("/api", userPaymentRoutes);
 
 app.use((req, res, next) => {
-    res.status(404).json({message: "Not Found"});
-});
+    res.sendFile(path.join(__dirname, "../dist/Kitchen-Story", "index.html"));
+})
 
 module.exports = app;
